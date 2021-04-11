@@ -17,3 +17,23 @@ we address the following problems and more.
 - general security headers and test if they get enforced via the connection
 - iptables (kernel) based loadbalancing of nodejs Instances.
 - socket activation based workers for dev or 
+
+
+## SSL
+use mkcert util or
+
+```
+openssl req -x509 -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' \
+  -keyout localhost-privkey.pem -out localhost-cert.pem
+```
+
+
+## Design decissions
+- Accept only http/2 to bundle connections into logical units
+- Even better Use http/3 connections to bundle connections
+- do not pushHeaders when serviceWorker is used
+- https://slacker.ro/2019/09/20/when-tcp-sockets-refuse-to-die/
+
+
+- OpenSSL quick support upstream https://github.com/openssl/openssl/pull/8797
+- OpenSSL Fork with quic support https://github.com/quictls/openssl
