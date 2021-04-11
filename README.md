@@ -2,6 +2,8 @@
 This Project is used to filter legit connections. And Applys Frank Lemanschik 's best security shema
 
 we address the following problems and more.
+https://www.lucidchart.com/techblog/2019/04/10/why-turning-on-http2-was-a-mistake/
+
 
 ## Features
 - Accept only HTTP/2 Connections to make distributed attacks more hard.
